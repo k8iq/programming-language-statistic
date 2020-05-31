@@ -4,9 +4,10 @@ Statistics of programming languages used in the Github projects
 
 > Automatic update via Github Action
 
-## Usage: `python pls.py`
+## Usage
 
-## Trending Project (Programming Languages) Statistics
+- New Project Statistics: `python npps.py`
+- Trending Project Statistics: `python tpps.py`
 
 ## New Project (Programming Languages) Statistics
 
@@ -31,3 +32,17 @@ Statistics of programming languages used in the Github projects
 ![2019](images/pie_2019.png)
 
 [**All Years**](./years.md)
+
+## Trending Project (Programming Languages) Statistics
+
+### Spoken Language: Any
+
+![any](images/any.png)
+
+### Spoken Language: EN
+
+![en](images/en.png)
+
+### Spoken Language: CN
+
+![zh](images/zh.png)

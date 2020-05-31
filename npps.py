@@ -22,6 +22,10 @@ def request(begin, end, stars):
     return BeautifulSoup(r.text, "html.parser")
 
 
+def now():
+    return datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S UTC")
+
+
 def parser_total(soup):
     for h3 in soup.find_all("h3"):
         tmp = h3.get_text()
@@ -61,7 +65,7 @@ def pie(year, stars, sizes, labels):
         f"""    
 Distribution of programming languages used in new projects
 [Year: {year}; Stars > {stars}; Source: Github Search]
-time: {datetime.now().isoformat()}
+{now()}
 """)
     plt.tight_layout()
     plt.savefig(f"./images/pie_{year}.png")
@@ -89,7 +93,7 @@ def line(lst, stars, includes=["Python", "Java", "Go", "TypeScript", "JavaScript
         f"""    
 Percentage of programming languages used in new projects
 [Stars > {stars}; Source: Github Search]
-time: {datetime.now().isoformat()}
+{now()}
 """)
     plt.xlabel("Years")
     plt.ylabel("Percentage")
@@ -118,7 +122,7 @@ def bar(lst, stars):
         title=f"""
 Percentage of programming languages used in new projects
 [Stars > {stars}; Source: Github Search]
-time: {datetime.now().isoformat()}
+{now()}
 """)
 
     plt.xlabel("Programming Languages")
