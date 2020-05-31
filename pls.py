@@ -59,7 +59,7 @@ def pie(year, stars, sizes, labels):
 
     plt.title(
         f"""    
-Number of New Projects
+Distribution of programming languages used in new projects
 [Year: {year}; Stars > {stars}; Source: Github Search]
 time: {datetime.now().isoformat()}
 """)
@@ -87,12 +87,12 @@ def line(lst, stars, includes=["Python", "Java", "Go", "TypeScript", "JavaScript
 
     plt.title(
         f"""    
-Percent of New Projects
+Percentage of programming languages used in new projects
 [Stars > {stars}; Source: Github Search]
 time: {datetime.now().isoformat()}
 """)
     plt.xlabel("Years")
-    plt.ylabel("Percent of New Projects")
+    plt.ylabel("Percentage")
     plt.legend()
     plt.tight_layout()
     plt.savefig("./images/line.png")
@@ -116,12 +116,13 @@ def bar(lst, stars):
     df = pd.DataFrame.from_dict(d, orient="index", columns=years)
     df.plot.bar(
         title=f"""
-Percent of New Projects through Programming Languages 
-[Stars > {stars}; Source: Github Search; {datetime.now().isoformat()}]
+Percentage of programming languages used in new projects
+[Stars > {stars}; Source: Github Search]
+time: {datetime.now().isoformat()}
 """)
 
     plt.xlabel("Programming Languages")
-    plt.ylabel("Percent of New Projects")
+    plt.ylabel("Percentage")
     plt.legend()
     plt.tight_layout()
     plt.savefig("./images/bar.png")
