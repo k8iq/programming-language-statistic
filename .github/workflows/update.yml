@@ -1,0 +1,36 @@
+name: Daily Update
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: 10 0,8,16 * * *
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Install requirements
+        run: |
+          pip install -r requirements.txt
+      - name: Execute tpps.py
+        run: |
+          python tpps.py
+      - name: Execute npps.py
+        run: |
+          python npps.py
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "auto update statistics" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
