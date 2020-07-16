@@ -151,7 +151,7 @@ def statistics_all(stars=10, interval=5):
 
 
 def run():
-    lst = statistics_all(10)
+    lst = statistics_all(10, 10)
 
     # pie all
     for item in lst:
