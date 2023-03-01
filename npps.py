@@ -27,12 +27,18 @@ def now():
 
 
 def parser_total(soup):
+    r = 0
     for h3 in soup.find_all("h3"):
         tmp = h3.get_text()
         if "repository results" in tmp:
             lst = [item for item in tmp.split() if item]
             if len(lst) > 0:
-                return int(lst[0].replace(",", ""))
+                try:
+                    r = int(lst[0].replace(",", ""))
+                    break
+                except ValueError:
+                    print("Invalid num: ", lst[0])
+     return 0
 
 
 def parser_program(soup, other=True):
