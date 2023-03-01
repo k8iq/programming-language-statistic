@@ -141,7 +141,7 @@ Percentage of programming languages used in new projects
 
 def statistics_all(stars=10, interval=5):
     lst = list()
-    years = list(range(2008, 2021))
+    years = list(range(2008, 2024))
     i = 0
     while i < len(years):
         soup = request_by_year(years[i], stars)

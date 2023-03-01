@@ -1,5 +1,17 @@
 # Distribution of programming languages used in new projects every year
 
+## 2023
+
+![2023](images/pie_2023.png)
+
+## 2022
+
+![2022](images/pie_2022.png)
+
+## 2021
+
+![2021](images/pie_2021.png)
+
 ## 2020
 
 ![2020](images/pie_2020.png)
