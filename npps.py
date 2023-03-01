@@ -38,7 +38,7 @@ def parser_total(soup):
                     break
                 except ValueError:
                     print("Invalid num: ", lst[0])
-     return 0
+    return 0
 
 
 def parser_program(soup, other=True):
